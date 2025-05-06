@@ -1,10 +1,16 @@
 import React from "react";
 
-function SummarizeButton({ onSummarize }) {
+function SummarizeButton({ onSummarize, disabled }) {
   return (
-    <button className="btn btn-primary mt-3" onClick={onSummarize}>
-      Summarize
-    </button>
+    <div className="my-3">
+      <button
+        className="btn btn-success"
+        onClick={onSummarize}
+        disabled={disabled}
+      >
+        {disabled ? "Summarizing..." : "Summarize"}
+      </button>
+    </div>
   );
 }
 

@@ -1,7 +1,18 @@
 import React from "react";
 
-function ChatBubble({ message, sender }) {
+function ChatBubble({ message, sender, type }) {
   const isUser = sender === "user";
+  console.log("type", type);
+  let bubbleClass = "";
+  if (isUser) {
+    bubbleClass = "bg-primary text-white"; 
+  } else if (type === "answer") {
+    bubbleClass = "bg-success text-white"; 
+  } else if (type === "summary") {
+    bubbleClass = "bg-success text-white"; 
+  } else {
+    bubbleClass = "bg-light text-dark"; 
+  }
 
   return (
     <div
@@ -10,10 +21,12 @@ function ChatBubble({ message, sender }) {
       }`}
     >
       <div
-        className={`p-3 rounded ${
-          isUser ? "bg-primary text-white" : "bg-light text-dark"
-        }`}
-        style={{ maxWidth: "70%", animation: "fadeIn 0.5s" }}
+        className={`p-3 rounded ${bubbleClass}`}
+        style={{
+          maxWidth: "70%",
+          whiteSpace: "pre-line",
+          animation: "fadeIn 0.5s",
+        }}
       >
         {message}
       </div>
