@@ -6,9 +6,9 @@ echo "Starting ReadEasy AI Setup..."
 echo "Setting up Flask backend..."
 
 # Step 1: Create virtual environment if not present
-if [ ! -d "venv" ]; then
+if [ ! -d ".venv" ]; then
   echo "Creating Python virtual environment..."
-  python3 -m venv venv
+  python3 -m venv .venv
 fi
 
 # Step 2: Activate virtual environment
