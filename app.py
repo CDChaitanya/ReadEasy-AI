@@ -84,7 +84,7 @@ def tfidf_qa(transcript, question, top_n=3, rerank_k=7):
     reranked = [candidate_sentences[i] for i in cos_scores.argsort(descending=True)[:top_n]]
     return reranked
 
-def generate_answer_with_rag(transcript, question, top_answers=3):
+def generate_answer(transcript, question, top_answers=3):
     answers = tfidf_qa(transcript, question, top_n=top_answers, rerank_k=7)
     results = set()
     for i in range(top_answers):
@@ -115,7 +115,7 @@ def ask_endpoint():
         return jsonify({'error': 'File and question are required'}), 400
 
     text = file.read().decode('utf-8')
-    numbered_answers = generate_answer_with_rag(text, question)
+    numbered_answers = generate_answer(text, question)
     return jsonify({'answers': numbered_answers})
 
 
