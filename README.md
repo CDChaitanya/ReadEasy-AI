@@ -1,7 +1,56 @@
 # ReadEasy-AI
 Intelligent Document-Based Text Summarization and Question Answering System
 
+Run ReadEasy AI
+------------------------------
 
+### Prerequisites
+
+Ensure you have the following installed on your system:
+
+-   **Python 3.8+**
+
+-   **Node.js 16+ npm**
+
+* * * * *
+
+### How to Run the Project
+
+1.  **Clone the repository** (if not already):
+
+    `git clone https://github.com/CDChaitanya/ReadEasy-AI`
+    
+    `cd ReadEasy-AI`
+
+3.  **Run the project setup script**:
+
+    `source run_project.sh`
+
+    This will:
+
+    -   Create and activate a Python virtual environment
+
+    -   Install backend dependencies from `requirements.txt`
+
+    -   Install frontend dependencies via `npm install`
+
+    -   Start both the Flask server and React frontend
+  
+    -   And it opens the http://localhost:3000
+
+* * * * *
+
+### How to Use the App
+
+1.  **Upload your `transcript.txt` file** using the upload button
+
+2.  **Click the "Summarize" button**
+
+    ⏳ Wait a few moments while the model processes and summarizes the document
+
+3.  Once the summary appears, you can **enter a question** related to the uploaded transcript
+
+4.  Click **"Ask"** --- the system will respond with an answer 
 
 ## Overview
 
