@@ -12,8 +12,8 @@ source .venv/bin/activate
 
 # Step 3: Install Python dependencies
 echo "Installing backend requirements..."
-pip install --upgrade pip
-pip install -r requirements.txt
+pip3 install --upgrade pip
+pip3 install -r requirements.txt
 
 # Step 4: Install Node dependencies
 cd frontend/readeasy-chat || { echo "Could not find frontend/readeasy"; exit 1; }
